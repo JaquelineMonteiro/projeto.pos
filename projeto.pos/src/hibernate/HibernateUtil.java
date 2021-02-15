@@ -24,7 +24,7 @@ public class HibernateUtil {
 		}
 	}
 	
-	public EntityManager getEntityManager(){
+	public static EntityManager getEntityManager(){
 		return factory.createEntityManager();
 	}
 	

@@ -6,8 +6,7 @@ public class HibernateTest {
 	
 	@Test
 	public void testarConexao() {
-		HibernateUtil hibernateUtil = new HibernateUtil();
-		hibernateUtil.getEntityManager();
+		HibernateUtil.getEntityManager();
 	}
 
 }

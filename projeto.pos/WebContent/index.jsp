@@ -25,7 +25,7 @@
 		<div class="container-fluid">
 			<!-- Header e Área do Professor -->
 			<nav class="navbar navbar-expand-lg navbar-light bg-light">
-			  <a class="navbar-brand" href="index.jsp">JMS IT Taining</a>
+			  <a class="navbar-brand" href="index.jsp">JMS IT Training</a>
 			  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
 			    <span class="navbar-toggler-icon"></span>
 			  </button>
@@ -76,7 +76,7 @@
 			</div>
 			
 			<!--  Footer -->
-			<nav class="navbar navbar-expand-lg navbar-light bg-light">JMS IT Taining. Todos os direitos reservados Copyright <i class="fa fa-copyright" aria-hidden="true"> 2021</i>
+			<nav class="navbar navbar-expand-lg navbar-light bg-light">JMS IT Training. Todos os direitos reservados Copyright <i class="fa fa-copyright" aria-hidden="true"> 2021</i>
 			  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
 			    <span class="navbar-toggler-icon"></span>
 			  </button>

@@ -42,7 +42,7 @@
 			      </li>
 			    </ul>
 			    <span class="navbar-text">
-			      <a class="nav-link" href="/projeto.pos/Controller?command=ConsultarAluno">Área do Professor</a>
+			      <a class="nav-link" href="/projeto.pos/Controller?command=LoginUsuario">Área do Professor</a>
 			    </span>
 			  </div>
 			</nav>

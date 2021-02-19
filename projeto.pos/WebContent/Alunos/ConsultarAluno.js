@@ -5,5 +5,9 @@ function onBuscarAluno(){
 }
 
 function executarCommand(url){
-	$( "#result" ).load(url);
+	$("#link").load(url);
 }
+
+$(document).ready(function(){
+	$('#link').click();
+});

@@ -1,7 +1,6 @@
 package commands;
 
 import java.io.IOException;
-import java.sql.SQLException;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -18,7 +17,7 @@ public class ConsultarAluno implements Command {
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
 		try {
 			
-			if(request.getParameter(id) != null) {
+			if(request.getParameter("matricula") != null) {
 				DaoGeneric<Aluno> daoGeneric = new DaoGeneric<Aluno>();
 				Aluno aluno = daoGeneric.pesquisar(Long.valueOf(id), Aluno.class);
 				request.setAttribute("aluno", aluno);

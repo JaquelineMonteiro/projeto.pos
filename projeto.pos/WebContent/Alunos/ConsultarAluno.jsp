@@ -1,6 +1,12 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-    
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ page import="model.Aluno"%>
+<%@ page import="java.util.ArrayList"%>
+<%@ page import="java.util.List"%>
+
+<%
+	Aluno aluno = (Aluno) request.getAttribute("aluno");
+%>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,49 +32,40 @@
 		<!-- Consulta por Matrícula -->
 		<nav class="navbar navbar-light bg-light">
 		  <form class="form-inline">
-		    <input class="form-control mr-sm-2" type="search" placeholder="Matrícula" aria-label="Search">
-		    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+		    <input class="form-control mr-sm-2" type="text" placeholder="Matrícula" aria-label="Search" name="matricula" id="matricula"> 
+		    <button class="btn btn-outline-success my-2 my-sm-0" type="button" onclick="onBuscarAluno()">Buscar</button>
 		  </form>
 		  <form class="form-inline"><a href="index.jsp"><i class="fa fa-home" aria-hidden="true"></i>Home</a></form> 
 		</nav>
-		
-		<!-- Nome do Aluno -->
-		<input class="form-control" type="text" readonly>
 		
 		<!-- Tabela -->
 		<table class="table table-sm table-hover">
 		  <thead>
 		    <tr>
-		      <th scope="col">#</th>
+		      <th scope="col">Nome</th>
 		      <th scope="col">Disciplina</th>
 		      <th scope="col">Média</th>
 		      <th scope="col">Situação</th>
 		    </tr>
 		  </thead>
+
 		  <tbody>
 		    <tr>
-		      <th scope="row">1</th>
 		      <td></td>
 		      <td></td>
 		      <td></td>
-		    </tr>
-		    <tr>
-		      <th scope="row">2</th>
-		      <td></td>
-		      <td></td>
-		      <td></td>
-		    </tr>
-		    <tr>
-		      <th scope="row">3</th>
-		      <td colspan="2"></td>
 		      <td></td>
 		    </tr>
 		  </tbody>
 		</table>
-	
+
+		<script type="text/javascript">
+			<jsp:include page="/Alunos/ConsultarAluno.js" />
+		</script>
+		
 		<!-- Optional JavaScript -->
 		<!-- jQuery first, then Popper.js, then Bootstrap JS -->	
-		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 	</body>

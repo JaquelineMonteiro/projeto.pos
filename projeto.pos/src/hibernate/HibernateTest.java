@@ -36,9 +36,7 @@ public class HibernateTest {
 		DaoGeneric<Aluno> daoGeneric = new DaoGeneric<Aluno>();		
 		Aluno aluno = new Aluno();		
 		aluno.setNome("teste");
-		aluno.setSobrenome("teste");
 		aluno.setEmail("teste.teste@gmail.com");	
-		aluno.setIdade(18);
 		aluno.setCpf(102);
 		daoGeneric.inserir(aluno);	
 		System.out.println("Inserido com sucesso!");

@@ -23,12 +23,6 @@ public class Aluno implements Serializable {
 	private String nome;
 	
 	@Column(nullable = false)
-	private String sobrenome;
-	
-	@Column(nullable = true)
-	private int idade;
-	
-	@Column(nullable = false)
 	private int cpf;
 	
 	@Column(nullable = true)
@@ -51,22 +45,6 @@ public class Aluno implements Serializable {
 		this.nome = nome;
 	}
 
-	public String getSobrenome() {
-		return sobrenome;
-	}
-
-	public void setSobrenome(String sobrenome) {
-		this.sobrenome = sobrenome;
-	}
-
-	public int getIdade() {
-		return idade;
-	}
-
-	public void setIdade(int idade) {
-		this.idade = idade;
-	}
-
 	public int getCpf() {
 		return cpf;
 	}
@@ -85,9 +63,9 @@ public class Aluno implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Aluno [id=" + id + ", nome=" + nome + ", sobrenome=" + sobrenome + ", idade=" + idade + ", cpf=" + cpf
-				+ ", email=" + email + "]";
+		return "Aluno [id=" + id + ", nome=" + nome + ", cpf=" + cpf + ", email=" + email + "]";
 	}
-	
+
+
 
 }

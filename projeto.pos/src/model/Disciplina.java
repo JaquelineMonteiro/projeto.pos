@@ -4,9 +4,11 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -21,6 +23,16 @@ public class Disciplina implements Serializable {
 	
 	@Column(nullable = false)
 	private String nomeDisciplina;
+	
+	@Column(nullable = true)
+	private double nota;
+	
+	@ManyToOne(optional = false, fetch = FetchType.EAGER)
+	private Aluno aluno;
+	
+	public Disciplina() {
+		
+	}	
 
 	public Long getId() {
 		return id;
@@ -34,11 +46,24 @@ public class Disciplina implements Serializable {
 	public void setNomeDisciplina(String nomeDisciplina) {
 		this.nomeDisciplina = nomeDisciplina;
 	}
+	public double getNota() {
+		return nota;
+	}	
+	public void setNota(double nota) {
+		this.nota = nota;
+	}
+	public Aluno getAluno() {
+		return aluno;
+	}
+	public void setAluno(Aluno aluno) {
+		this.aluno = aluno;
+	}
 
 	@Override
 	public String toString() {
-		return "Disciplina [id=" + id + ", nomeDisciplina=" + nomeDisciplina + "]";
-	}	
+		return "Disciplina [id=" + id + ", nomeDisciplina=" + nomeDisciplina + ", nota=" + nota + ", aluno=" + aluno
+				+ "]";
+	}
 	
 	
 }

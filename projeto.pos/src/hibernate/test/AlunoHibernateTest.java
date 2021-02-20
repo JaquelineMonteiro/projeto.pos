@@ -1,13 +1,14 @@
-package hibernate;
+package hibernate.test;
 
 import java.util.List;
 
 import org.junit.Test;
 
 import dao.DaoGeneric;
+import hibernate.HibernateUtil;
 import model.Aluno;
 
-public class HibernateTest {
+public class AlunoHibernateTest {
 	
 	@Test
 	public void testarConexao() {
@@ -17,8 +18,8 @@ public class HibernateTest {
 	@Test
 	public void testeGetAll() {
 		DaoGeneric<Aluno> daoGeneric = new DaoGeneric<Aluno>();
-		List<Aluno> list = daoGeneric.getAll(Aluno.class);		
-		for (Aluno aluno : list) {
+		List<Aluno> alunos = daoGeneric.getAll(Aluno.class);		
+		for (Aluno aluno : alunos) {
 			System.out.println(aluno);	
 			System.out.println("----------------------------------------------------------------------------------------------------------------------------------");
 		}
@@ -27,7 +28,7 @@ public class HibernateTest {
 	@Test
 	public void testeGetById() {
 		DaoGeneric<Aluno> daoGeneric = new DaoGeneric<Aluno>();
-		Aluno aluno = daoGeneric.pesquisar(2L, Aluno.class);
+		Aluno aluno = daoGeneric.pesquisar(1L, Aluno.class);
 		System.out.println(aluno);
 	}
 	
@@ -45,7 +46,7 @@ public class HibernateTest {
 	@Test
 	public void testeUpdate() {
 		DaoGeneric<Aluno> daoGeneric = new DaoGeneric<Aluno>();
-		Aluno aluno = daoGeneric.pesquisar(2L, Aluno.class);
+		Aluno aluno = daoGeneric.pesquisar(1L, Aluno.class);
 		aluno.setNome("Jaque");
 		aluno = daoGeneric.updateMerge(aluno);
 		System.out.println("Atualizado com sucesso!");
@@ -54,7 +55,7 @@ public class HibernateTest {
 	@Test
 	public void testeDelete() {
 		DaoGeneric<Aluno> daoGeneric = new DaoGeneric<Aluno>();
-		Aluno aluno = daoGeneric.pesquisar(1L, Aluno.class);
+		Aluno aluno = daoGeneric.pesquisar(2L, Aluno.class);
 		daoGeneric.deleteById(aluno);
 		System.out.println("Excluído com sucesso!");
 	}

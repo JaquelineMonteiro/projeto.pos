@@ -24,7 +24,6 @@
 	<body>
 
 		<div class="panel panel-default">
-			<!-- Default panel contents -->
 			<div class="panel-heading"></div>
 			<form id="LoginFormulario">
 				<div class="form-group">

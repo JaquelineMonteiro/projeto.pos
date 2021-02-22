@@ -16,12 +16,14 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import shared.fluent.Validacao;
+
 @Entity
 @Table(name = "aluno")
-public class Aluno implements Serializable {
+public class Aluno extends Validacao implements Serializable {
 
-	private static final long serialVersionUID = 1L;
-	
+	private static final long serialVersionUID = -6692790779160200106L;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;

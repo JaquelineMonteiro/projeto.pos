@@ -11,12 +11,14 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import shared.fluent.Validacao;
+
 @Entity
 @Table(name = "disciplina")
-public class Disciplina implements Serializable {
+public class Disciplina extends Validacao implements Serializable {
 
-	private static final long serialVersionUID = 1L;
-	
+	private static final long serialVersionUID = -7284182390082106173L;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;

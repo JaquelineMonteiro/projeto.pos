@@ -1,5 +1,3 @@
-
-
 function onEditarUsuario(id)
 {
 	if(id)

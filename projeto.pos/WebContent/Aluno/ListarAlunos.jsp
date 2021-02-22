@@ -27,6 +27,10 @@
 	
 		<div class="panel panel-default">
 			<div class="panel-heading">Listagem de Alunos</div>
+			<div>
+				<button class="btn btn-primary" type="button" 
+					onclick="onEditarAluno()">Novo Aluno</button>
+			</div>
 
 			<table class="table">
 				<tr>
@@ -44,6 +48,16 @@
 					for (Aluno result : alunos) {
 				%>
 				<tr>
+					<td>
+						<button type="button" class="btn btn-info btn-sm"
+							onclick="onEditarAluno'<%=result.getId()%>')">
+							<span class="fa fa-pencil"></span>
+						</button>
+						<button type="button" class="btn btn-danger btn-sm"
+							onclick="onDeletarAluno'<%=result.getId()%>')">
+							<span class="fa fa-trash-o"></span>
+						</button>
+					</td>
 					<td><%=result.getNome()%></td>
 					<td><%=result.getCpf()%></td>
 					<td><%=result.getEmail()%></td>

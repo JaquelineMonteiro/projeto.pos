@@ -31,24 +31,28 @@
 			<div class="panel-heading">Cadatrar Usuario</div>
 			<form id="UsuarioFormulario">
 				<input type="hidden" name="id" value="<%=usuario.getId()%>" />
+				
 				<div class="form-group">
 					<label class="control-label required">Nome <abbr
 						title="required">*</abbr>
-					</label> <input type="text" class="form-control" name="nome"
+					</label> 
+					<input type="text" class="form-control" name="nome"
 						value="<%=usuario.getNome()%>" required />
 				</div>
 		
 				<div class="form-group">
 					<label class="control-label required">Login <abbr
 						title="required">*</abbr>
-					</label> <input type="text" class="form-control" name="login"
+					</label> 
+					<input type="text" class="form-control" name="login"
 						value="<%=usuario.getLogin()%>" required />
 				</div>
 				
 				<div class="form-group">
 					<label class="control-label required">Senha <abbr
 						title="required">*</abbr>
-					</label> <input type="password" class="form-control" name="senha"
+					</label> 
+					<input type="password" class="form-control" name="senha"
 						 required />
 				</div>
 		

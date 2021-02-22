@@ -1,7 +1,6 @@
 package model;
 
 import java.io.Serializable;
-import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -31,8 +30,6 @@ public class Pessoa extends Validacao implements Serializable {
 	@Column(nullable = true)
 	private String email;
 	
-	@Column(nullable = true)
-	private Date dataNascimento;
 
 	public Long getId() {
 		return id;
@@ -66,19 +63,11 @@ public class Pessoa extends Validacao implements Serializable {
 		this.email = email;
 	}
 
-	public Date getDataNascimento() {
-		return dataNascimento;
-	}
-
-	public void setDataNascimento(Date dataNascimento) {
-		this.dataNascimento = dataNascimento;
-	}
-
 	@Override
 	public String toString() {
-		return "Pessoa [id=" + id + ", nome=" + nome + ", cpf=" + cpf + ", email=" + email + ", dataNascimento="
-				+ dataNascimento + "]";
+		return "Pessoa [id=" + id + ", nome=" + nome + ", cpf=" + cpf + ", email=" + email + "]";
 	}
-	
+
+
 	
 }

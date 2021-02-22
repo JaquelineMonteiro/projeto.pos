@@ -17,7 +17,7 @@ public class DeletarUsuario implements Command {
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
 		try {
-			Usuario usuario = new Usuario("", "");
+			Usuario usuario = new Usuario();
 			usuario.setId(Long.valueOf(request.getParameter("id")));
 			this.daoGeneric.deleteById(usuario);
 			RequestDispatcher d = request.getRequestDispatcher("Controller?command=ListarUsuario");
@@ -26,6 +26,6 @@ public class DeletarUsuario implements Command {
 		} catch (IOException | ServletException e) {
 			e.printStackTrace();
 		}
-}
+	}
 
 }

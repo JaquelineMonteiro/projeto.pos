@@ -5,15 +5,14 @@ import static constantes.StatusAluno.RECUPERACAO;
 import static constantes.StatusAluno.REPROVADO;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
-
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
 
 @Entity
 @Table(name = "aluno")
@@ -26,30 +25,34 @@ public class Aluno extends Pessoa implements Serializable {
 	private Long id;
 	
 	@OneToMany(mappedBy = "aluno")
-	private List<Disciplina> disciplinas = new ArrayList<Disciplina>();
+	@Column
+	private Disciplina disciplina;
 	
 	public Aluno() {
 		
 	}
 	
+	public Aluno(String nome, int cpf, String email, Disciplina disciplina) {
+		super(nome, cpf, email);	
+		this.disciplina = disciplina;
+	}
+
 	public Long getId() {
 		return id;
 	}
 	public void setId(Long id) {
 		this.id = id;
 	}
-	public List<Disciplina> getDisciplinas() {
-		return disciplinas;
+	public Disciplina getDisciplina() {
+		return disciplina;
 	}
-	public void setDisciplinas(List<Disciplina> disciplinas) {
-		this.disciplinas = disciplinas;
+	public void setDisciplina(Disciplina disciplina) {
+		this.disciplina = disciplina;
 	}
 	
 	public double getNota () {		
 		double nota = 0.0;		
-		for(Disciplina disciplina: disciplinas) {
-			nota = disciplina.getNota();
-		}		
+		nota = disciplina.getNota();		
 		return nota;
 	}
 	
@@ -65,7 +68,7 @@ public class Aluno extends Pessoa implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Aluno [id=" + id + ", disciplinas=" + disciplinas + "]";
+		return "Aluno [id=" + id + ", disciplina=" + disciplina + "]";
 	}
 
 

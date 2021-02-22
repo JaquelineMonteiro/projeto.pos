@@ -9,7 +9,7 @@
 <%
 	Aluno aluno = (Aluno) request.getAttribute("aluno");
 	Pessoa pessoa = (Pessoa) request.getAttribute("pessoa");
-	List<Disciplina> disciplinas = (ArrayList<Disciplina>) request.getAttribute("disciplinas");
+	Disciplina disciplina = (Disciplina) request.getAttribute("disciplina");
 %>
 
 <!DOCTYPE html>
@@ -65,19 +65,19 @@
 			</div>
 
 			<div class="form-group">
-				<label class="control-label required">Disciplinas <abbr
+				<label class="control-label required">Disciplina <abbr
 					title="required">*</abbr>
 				</label> 
 				<input type="text" class="form-control" name="disciplinas"
-					value="<%=aluno.getDisciplinas()%>" required />
+					value="<%=aluno.getDisciplina()%>" required />
 			</div>
-
+			
 			<div class="form-group">
 				<label class="control-label required">Nota <abbr
 					title="required">*</abbr>
 				</label> 
 				<input type="text" class="form-control" name="nota"
-					value="<%=aluno.getNota()%>" required />
+					value="<%=disciplina.getNota()%>" required />
 			</div>
 
 			<button class="btn btn-primary" type="button"

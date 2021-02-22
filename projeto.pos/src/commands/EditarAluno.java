@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import dao.DaoGeneric;
 import model.Aluno;
+import model.Disciplina;
+import model.Pessoa;
 
 public class EditarAluno implements Command {
 
@@ -16,13 +18,24 @@ public class EditarAluno implements Command {
 	
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
-		try {
+		try {					
+			Disciplina disciplina = new Disciplina(request.getParameter("nomeDisciplina"), 
+					(Double.valueOf(request.getParameter("nota"))));
+			
 			Aluno aluno = null;
+			
 			if(request.getParameter("id") != null) {
 				aluno = this.daoGeneric.pesquisar(Long.valueOf(request.getParameter("id")), Aluno.class);
+				aluno.setNome(request.getParameter("nome"));
+				aluno.setCpf(Integer.parseInt(request.getParameter("cpf")));
+				aluno.setEmail(request.getParameter("email"));
+				aluno.setDisciplina(disciplina);				
 				daoGeneric.updateMerge(aluno);
-			} else
-				daoGeneric.inserir(aluno);
+			} else {
+				aluno = new Aluno(request.getParameter("nome"), (Integer.parseInt(request.getParameter("cpf"))), 
+						request.getParameter("email"), disciplina);
+				daoGeneric.inserir(aluno);				
+			}				
 			
 			request.setAttribute("aluno", aluno);
 			RequestDispatcher d = request.getRequestDispatcher("/Usuario/EditarAluno.jsp");

@@ -29,7 +29,17 @@ public class Pessoa extends Validacao implements Serializable {
 	
 	@Column(nullable = true)
 	private String email;
-	
+
+	public Pessoa() {
+		super();
+	}
+
+	public Pessoa(String nome, int cpf, String email) {
+		super();
+		this.nome = nome;
+		this.cpf = cpf;
+		this.email = email;
+	}
 
 	public Long getId() {
 		return id;
@@ -67,7 +77,6 @@ public class Pessoa extends Validacao implements Serializable {
 	public String toString() {
 		return "Pessoa [id=" + id + ", nome=" + nome + ", cpf=" + cpf + ", email=" + email + "]";
 	}
-
 
 	
 }

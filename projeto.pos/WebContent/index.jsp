@@ -55,7 +55,7 @@
 			  <div class="card-body">
 			    <h5 class="card-title">Resultado de Provas</h5>
 			    <p class="card-text">Consulte o resultado final das suas disciplinas aqui.</p>
-			    <a href="/projeto.pos/Controller?command=ConsultarAluno" class="btn btn-primary">Consultar</a>
+			    <a href="/projeto.pos/Controller?command=ListarResultado" class="btn btn-primary">Consultar</a>
 			  </div>
 			  <div class="card-footer text-muted">
 			    2 dias atrás

@@ -5,17 +5,17 @@ import static constantes.StatusAluno.RECUPERACAO;
 import static constantes.StatusAluno.REPROVADO;
 
 import java.io.Serializable;
-import javax.persistence.Column;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
-
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.ManyToOne;
 
 @Entity
-@Table(name = "aluno")
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 public class Aluno extends Pessoa implements Serializable {
 
 	private static final long serialVersionUID = -6692790779160200106L;
@@ -24,8 +24,8 @@ public class Aluno extends Pessoa implements Serializable {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	
-	@OneToMany(mappedBy = "aluno")
-	@Column
+	
+	@ManyToOne
 	private Disciplina disciplina;
 	
 	public Aluno() {
@@ -68,7 +68,7 @@ public class Aluno extends Pessoa implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Aluno [id=" + id + ", disciplina=" + disciplina + "]";
+		return "Aluno [id=" + id + ", disciplina=" + disciplina + ", toString()=" + super.toString() + "]";
 	}
 
 

@@ -7,6 +7,8 @@ import org.junit.Test;
 import dao.DaoGeneric;
 import hibernate.HibernateUtil;
 import model.Aluno;
+import model.Disciplina;
+import model.Pessoa;
 
 public class AlunoHibernateTest {
 	
@@ -39,6 +41,7 @@ public class AlunoHibernateTest {
 		aluno.setNome("teste");
 		aluno.setEmail("teste.teste@gmail.com");	
 		aluno.setCpf(102);
+		aluno.setDisciplina(new Disciplina("Java", 9.9));
 		daoGeneric.inserir(aluno);	
 		System.out.println("Inserido com sucesso!");
 	}
@@ -47,7 +50,7 @@ public class AlunoHibernateTest {
 	public void testeUpdate() {
 		DaoGeneric<Aluno> daoGeneric = new DaoGeneric<Aluno>();
 		Aluno aluno = daoGeneric.pesquisar(1L, Aluno.class);
-		aluno.setNome("Jaque");
+		aluno.setDisciplina(new Disciplina ("Java", 9.9));
 		aluno = daoGeneric.updateMerge(aluno);
 		System.out.println("Atualizado com sucesso!");
 	}

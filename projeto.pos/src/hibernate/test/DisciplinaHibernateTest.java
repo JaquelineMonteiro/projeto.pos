@@ -37,11 +37,9 @@ public class DisciplinaHibernateTest {
 	@Test
 	public void testeInsert(){
 		DaoGeneric daoGeneric = new DaoGeneric();		
-		Aluno aluno = (Aluno) daoGeneric.pesquisar(1L, Aluno.class);
 		Disciplina disciplina = new Disciplina();
 		disciplina.setNomeDisciplina("Java");
 		disciplina.setNota(8.7);
-		disciplina.setAluno(aluno);
 		daoGeneric.inserir(disciplina);	
 		System.out.println("Inserido com sucesso!");
 	}

@@ -28,7 +28,7 @@ public class UsuarioHibernateTest {
 	@Test
 	public void testeGetById() {
 		DaoGeneric<Usuario> daoGeneric = new DaoGeneric<Usuario>();
-		Usuario usuario = daoGeneric.pesquisar(6L, Usuario.class);
+		Usuario usuario = daoGeneric.pesquisar(2L, Usuario.class);
 		System.out.println(usuario);
 	}
 	
@@ -46,7 +46,7 @@ public class UsuarioHibernateTest {
 	@Test
 	public void testeUpdate() {
 		DaoGeneric<Usuario> daoGeneric = new DaoGeneric<Usuario>();
-		Usuario usuario = daoGeneric.pesquisar(6L, Usuario.class);
+		Usuario usuario = daoGeneric.pesquisar(2L, Usuario.class);
 		usuario.setNome("JAQUE");
 		usuario = daoGeneric.updateMerge(usuario);
 		System.out.println("Atualizado com sucesso!");
@@ -55,7 +55,7 @@ public class UsuarioHibernateTest {
 	@Test
 	public void testeDelete() {
 		DaoGeneric<Usuario> daoGeneric = new DaoGeneric<Usuario>();
-		Usuario usuario = daoGeneric.pesquisar(7L, Usuario.class);
+		Usuario usuario = daoGeneric.pesquisar(2L, Usuario.class);
 		daoGeneric.deleteById(usuario);
 		System.out.println("Excluído com sucesso!");
 	}

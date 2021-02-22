@@ -7,7 +7,6 @@ import org.junit.Test;
 
 import dao.DaoGeneric;
 import hibernate.HibernateUtil;
-import model.Aluno;
 import model.Disciplina;
 
 public class DisciplinaHibernateTest {
@@ -36,7 +35,7 @@ public class DisciplinaHibernateTest {
 	
 	@Test
 	public void testeInsert(){
-		DaoGeneric daoGeneric = new DaoGeneric();		
+		DaoGeneric<Disciplina> daoGeneric = new DaoGeneric<Disciplina>();		
 		Disciplina disciplina = new Disciplina();
 		disciplina.setNomeDisciplina("Java");
 		disciplina.setNota(8.7);

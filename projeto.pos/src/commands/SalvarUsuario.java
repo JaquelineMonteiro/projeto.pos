@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import dao.DaoGeneric;
 import model.Usuario;
 
-public class SalvarUsuario  implements Command {
+public class SalvarUsuario implements Command {
 
 	DaoGeneric<Usuario> daoGeneric = new DaoGeneric<Usuario>();
 	
@@ -25,11 +25,10 @@ public class SalvarUsuario  implements Command {
 				isNovo = false;
 			}
 
-			if(isNovo) {
-				daoGeneric.inserir(usuario);	
-			} else {
-				daoGeneric.updateMerge(usuario);
-			}
+			if(isNovo)
+				this.daoGeneric.inserir(usuario);	
+			else
+				this.daoGeneric.updateMerge(usuario);
 
 			if(usuariologado == null) {
 				request.getRequestDispatcher("Controller?command=LoginUsuario").forward(request,response);

@@ -19,9 +19,7 @@ public class DeletarUsuario implements Command {
 		try {
 			Usuario usuario = new Usuario("", "");
 			usuario.setId(Long.valueOf(request.getParameter("id")));
-
 			this.daoGeneric.deleteById(usuario);
-
 			RequestDispatcher d = request.getRequestDispatcher("Controller?command=ListarUsuario");
 			d.forward(request,response);
 

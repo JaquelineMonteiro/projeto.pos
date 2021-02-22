@@ -20,12 +20,11 @@ public class EditarUsuario implements Command {
 			Usuario usuario = null;
 			if(request.getParameter("id") != null) {
 				usuario = this.daoGeneric.pesquisar(Long.valueOf(request.getParameter("id")), Usuario.class);
-			} else {
-				usuario = new Usuario("", "", "");
-			}
+				daoGeneric.updateMerge(usuario);
+			} else
+				daoGeneric.inserir(usuario);
 			
 			request.setAttribute("usuario", usuario);
-
 			RequestDispatcher d = request.getRequestDispatcher("/Usuario/EditarUsuario.jsp");
 			d.forward(request,response);
 

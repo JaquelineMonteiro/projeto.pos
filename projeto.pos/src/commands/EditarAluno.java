@@ -10,7 +10,6 @@ import javax.servlet.http.HttpServletResponse;
 import dao.DaoGeneric;
 import model.Aluno;
 import model.Disciplina;
-import model.Pessoa;
 
 public class EditarAluno implements Command {
 
